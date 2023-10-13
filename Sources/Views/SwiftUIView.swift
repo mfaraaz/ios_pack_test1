@@ -15,10 +15,3 @@ public struct SwiftUIView: View {
         Text("This is coming from the package.")
     }
 }
-
-@available(iOS 13.0, *)
-public struct SwiftUIView_Previews: PreviewProvider {
-    public static var previews: some View {
-        SwiftUIView()
-    }
-}
