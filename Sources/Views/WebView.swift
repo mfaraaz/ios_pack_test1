@@ -10,14 +10,19 @@ import WebKit
 
 @available(iOS 13.0, *)
 public struct WebView: UIViewRepresentable {
-    public init() {}
+    public let url: String
+
+    public init(url: String) {
+        self.url = url
+    }
+    
     public func makeUIView(context: Context) -> WKWebView {
         return WKWebView()
     }
 
     public func updateUIView(_ uiView: WKWebView, context: Context) {
         // Load the web content into the webview.
-        let url = URL(string: "https://www.bajajfinservhealth.com")!
+        let url = URL(string: url)!
         uiView.load(URLRequest(url: url))
     }
 }
